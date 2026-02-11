@@ -17,7 +17,7 @@ EOT
     location                          = string
     name                              = string
     resource_group_name               = string
-    project_catalog_item_sync_enabled = optional(bool, false)
+    project_catalog_item_sync_enabled = optional(bool) # Default: false
     tags                              = optional(map(string))
     identity = optional(object({
       identity_ids = optional(set(string))
