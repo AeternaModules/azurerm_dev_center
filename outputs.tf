@@ -8,7 +8,7 @@ output "dev_centers_dev_center_uri" {
 }
 output "dev_centers_identity" {
   description = "Map of identity values across all dev_centers, keyed the same as var.dev_centers"
-  value       = { for k, v in azurerm_dev_center.dev_centers : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_dev_center.dev_centers : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "dev_centers_location" {
   description = "Map of location values across all dev_centers, keyed the same as var.dev_centers"
